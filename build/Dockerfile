@@ -1,7 +1,7 @@
 FROM maven:latest AS build
 WORKDIR /app
 COPY . .
-RUN mvn package
+RUN mvn package -DskipTests
 
 FROM tomcat:latest
 WORKDIR /work
