@@ -16,7 +16,7 @@ COPY . .
 RUN mvn package -DskipTests
 
 FROM tomcat:latest
-WORKDIR /work
+#WORKDIR /work not need 
 RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/new.war
 EXPOSE 8080
